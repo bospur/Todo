@@ -15,6 +15,7 @@ const TodoItem = observer(({ todo }) => {
   const removeTodo = () => {
     todoStore.removeTodo(todo.id)
   }
+
   return (
     <li className={cl.item} style={{ background }}>
       <input
@@ -24,7 +25,7 @@ const TodoItem = observer(({ todo }) => {
         onChange={onChange}
       />
       <p className={cl.title}>{todo.title}</p>
-      <DeletIcon  onClick={removeTodo}/>
+      <DeletIcon  onClick={removeTodo} />
     </li>
   );
 });

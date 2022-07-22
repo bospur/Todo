@@ -2,9 +2,10 @@ import React from "react";
 import cl from './delete-icon.module.scss';
 
 const DeletIcon = ({ ...props }) => {
+
   return (
     <svg
-      fill="#000000"
+      fill={props.fill || "#000000"}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       width="24px"
