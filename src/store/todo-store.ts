@@ -16,7 +16,7 @@ class TodoStore {
         description: 'Тестовое задание на позицию Frontend разработчика'
     }
   ];
-  deletedTodos: Array<ITodoStore> = [];
+  filter: string = 'all';
 
   constructor() {
     makeAutoObservable(this);
@@ -27,12 +27,15 @@ class TodoStore {
   }
 
   removeTodo(id: number) {
-    this.todos.forEach(todo =>{ if (todo.id == id) {this.deletedTodos.push(todo)}})
     this.todos = this.todos.filter((todo) => todo.id !== id);
   }
 
   completeTodo(todo: ITodoStore) {
     todo.completed = !todo.completed;
+  }
+
+  setFilter(value: string) {
+    this.filter = value;
   }
 }
 

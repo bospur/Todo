@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import todoStore from "../../../store/todo-store";
 import cl from "./todo-form.module.scss";
 
@@ -9,7 +9,7 @@ const TodoForm = () => {
     id: null,
     completed: false,
   });
-  const onSubmint = (e) => {
+  const onSubmint = (e: FormEvent) => {
     e.preventDefault();
 
     todoStore.addTodo({
@@ -25,7 +25,7 @@ const TodoForm = () => {
     });
   };
 
-  const inputChangeHandler = (e) => {
+  const inputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
