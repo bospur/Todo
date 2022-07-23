@@ -1,11 +1,11 @@
-import React from 'react';
-import Todo from '../todo/todo';
-import './App.css';
+import React, { FC } from "react";
+import Todo from "../todo/todo";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Todo />
+      <Todo title={"Список задач!"} />
     </div>
   );
 }
